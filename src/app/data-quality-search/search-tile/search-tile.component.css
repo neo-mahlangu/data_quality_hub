@@ -1,0 +1,14 @@
+:host{
+    .icon{
+        width: 100%;
+        
+    }
+
+    img{
+        height: 200px;
+    }
+
+    mat-card-title{
+        font-weight: bolder;
+    }
+}

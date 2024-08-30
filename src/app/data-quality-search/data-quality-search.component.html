@@ -7,19 +7,19 @@
     </div>
     <div class="row">
         <div class="col">
-            <app-search-tile  [title]="'All DQ Dimension'" [icon] = "'list.svg'"></app-search-tile>
+            <app-search-tile  [title]="'All DQ Dimension'" [icon] = "'list.svg'" ></app-search-tile>
         </div>
         <div class="col">
-            <app-search-tile  [title]="'Add DQ Dimension'" [icon] = "'add.svg'"></app-search-tile>
+            <app-search-tile [path]="'add-dq-definition'" [title]="'Add DQ Dimension'" [icon] = "'add.svg'"></app-search-tile>
         </div>
         <div class="col">
-            <app-search-tile  [title]="'Validate'" [icon] = "'validate.svg'"></app-search-tile>
+            <app-search-tile [path]="'validate-dq-definition'"  [title]="'Validate'" [icon] = "'validate.svg'"></app-search-tile>
         </div>    
     </div>
 
     <div class="row">
         <div class="col">
-            <app-search-tile  [title]="'API Interface'" [icon] = "'connect.svg'"></app-search-tile>
+            <app-search-tile [path]="'api-interface'"  [title]="'API Interface'" [icon] = "'connect.svg'"></app-search-tile>
         </div>
         <div class="col">
             <app-search-tile  [title]="'Reference Data'" [icon] = "'static-list.svg'"></app-search-tile>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddDqDimensionComponent } from './add-dq-dimension.component';
+import { AllReferenceDataComponent } from './all-reference-data.component';
 
-describe('AddDqDimensionComponent', () => {
-  let component: AddDqDimensionComponent;
-  let fixture: ComponentFixture<AddDqDimensionComponent>;
+describe('AllReferenceDataComponent', () => {
+  let component: AllReferenceDataComponent;
+  let fixture: ComponentFixture<AllReferenceDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddDqDimensionComponent ]
+      declarations: [ AllReferenceDataComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddDqDimensionComponent);
+    fixture = TestBed.createComponent(AllReferenceDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

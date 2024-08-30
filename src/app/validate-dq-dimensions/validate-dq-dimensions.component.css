@@ -1,0 +1,18 @@
+:host{
+
+    mat-form-field{
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    button{
+        width: 80%;
+        background-color:#0033aa ;
+        color: white;
+    }
+
+    mat-card-content{
+        display:flex;
+        width:100%
+    }
+}

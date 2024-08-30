@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-tile',
@@ -13,9 +14,19 @@ export class SearchTileComponent implements OnInit {
   @Input()
   icon!: string;
 
-  constructor() { }
+  @Input()
+  path!: string;
+
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
+
+  navigate() {
+    // this.router(path);
+    // this.router.canActivate;
+    this._router.navigate([this.path]);
+    // this._router.navigateByUrl(this.path);
+} 
 
 }

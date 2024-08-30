@@ -9,7 +9,11 @@ import { MaterialModule } from './material.module';
 import { DataQualitySearchFormComponent } from './data-quality-search/data-quality-search-form/data-quality-search-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchTileComponent } from './data-quality-search/search-tile/search-tile.component';
-import { AddDqDimensionComponent } from './tiles-view/add-dq-dimension/add-dq-dimension.component';
+import { AddDqDimensionsComponent } from './add-dq-dimensions/add-dq-dimensions.component';
+import { ValidateDqDimensionsComponent } from './validate-dq-dimensions/validate-dq-dimensions.component';
+import { ApiInterfaceComponent } from './api-interface/api-interface.component';
+import { ApiValidateDataComponent } from './api-interface/api-validate-data/api-validate-data.component';
+import { ApiStaticDataComponent } from './api-interface/api-static-data/api-static-data.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,12 @@ import { AddDqDimensionComponent } from './tiles-view/add-dq-dimension/add-dq-di
     DataQualitySearchComponent,
     DataQualitySearchFormComponent,
     SearchTileComponent,
-    AddDqDimensionComponent
+    AddDqDimensionsComponent,
+    ValidateDqDimensionsComponent,
+    ApiInterfaceComponent,
+    ApiStaticDataComponent,
+    ApiValidateDataComponent
+
   ],
   imports: [
     BrowserModule,

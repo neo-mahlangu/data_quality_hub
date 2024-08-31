@@ -5,6 +5,7 @@ import { DataQualitySearchComponent } from './data-quality-search/data-quality-s
 import { AppComponent } from './app.component';
 import { ValidateDqDimensionsComponent } from './validate-dq-dimensions/validate-dq-dimensions.component';
 import { ApiInterfaceComponent } from './api-interface/api-interface.component';
+import { AllReferenceDataComponent } from './all-reference-data/all-reference-data.component';
 
 const routes: Routes = [
   {
@@ -19,10 +20,13 @@ const routes: Routes = [
     component: DataQualitySearchComponent},
     {
       path: "api-interface",
-      component: ApiInterfaceComponent},];
+      component: ApiInterfaceComponent},
+     {
+      path: "reference-data",
+      component: AllReferenceDataComponent}];
 
 
-    ValidateDqDimensionsComponent
+      
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -14,6 +14,7 @@ import { ValidateDqDimensionsComponent } from './validate-dq-dimensions/validate
 import { ApiInterfaceComponent } from './api-interface/api-interface.component';
 import { ApiValidateDataComponent } from './api-interface/api-validate-data/api-validate-data.component';
 import { ApiStaticDataComponent } from './api-interface/api-static-data/api-static-data.component';
+import { AllReferenceDataComponent } from './all-reference-data/all-reference-data.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ApiStaticDataComponent } from './api-interface/api-static-data/api-stat
     ValidateDqDimensionsComponent,
     ApiInterfaceComponent,
     ApiStaticDataComponent,
-    ApiValidateDataComponent
+    ApiValidateDataComponent,
+    AllReferenceDataComponent
 
   ],
   imports: [

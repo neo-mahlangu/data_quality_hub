@@ -1,0 +1,26 @@
+:host{
+    table{
+        width: 100%;
+    }
+    mat-icon{
+        color: #0033aa;
+    }
+
+    .mat-column-actions {
+        width: 20%;
+        border-right: 1px solid currentColor;
+        padding-right: 24px;
+        text-align: center;
+      }
+
+      
+    .mat-column-name {
+        width: 40%;
+      }
+    
+      .mat-column-description {
+        width: 50%;
+      }
+
+  
+}

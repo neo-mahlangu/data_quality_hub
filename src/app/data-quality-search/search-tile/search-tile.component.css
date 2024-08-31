@@ -3,12 +3,16 @@
         width: 100%;
         
     }
+    mat-card {
+        width: 250px;
+    }
 
     img{
         height: 200px;
     }
 
-    mat-card-title{
-        font-weight: bolder;
+    .title{
+        /* font-weight: bolder; */
+        font-size: medium;
     }
 }

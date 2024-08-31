@@ -18,10 +18,10 @@
         color: white;
     }
 
-    mat-card-content{
+    mat-card{
 
         /* display:list-item; */
         display:flex;
-        width:100%
+        justify-content: center;
     }
 }

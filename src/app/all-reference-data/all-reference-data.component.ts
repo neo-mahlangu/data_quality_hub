@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeriodicElement } from '../api-interface/api-validate-data/api-validate-data.component';
+import { Router } from '@angular/router';
 
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -19,9 +20,14 @@ export class AllReferenceDataComponent implements OnInit {
   displayedColumns: string[] = [ 'name', 'description','actions'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _router: Router) { }
+
 
   ngOnInit(): void {
   }
+
+  navigate() {
+    this._router.navigate(["view-reference-data"]);
+} 
 
 }

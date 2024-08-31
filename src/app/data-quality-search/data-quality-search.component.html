@@ -5,23 +5,23 @@
     <div class="row justify-content-center">
         <app-data-quality-search-form></app-data-quality-search-form>
     </div>
-    <div class="row">
-        <div class="col">
-            <app-search-tile  [title]="'All DQ Dimension'" [icon] = "'list.svg'" ></app-search-tile>
+    <div class="row tile-row">
+        <div class="col-3">
+            <app-search-tile  [path]="'all-dq-definitions'" [title]="'All DQ Dimension'" [icon] = "'list.svg'" ></app-search-tile>
         </div>
-        <div class="col">
+        <div class="col-3">
             <app-search-tile [path]="'add-dq-definition'" [title]="'Add DQ Dimension'" [icon] = "'add.svg'"></app-search-tile>
         </div>
-        <div class="col">
+        <div class="col-3">
             <app-search-tile [path]="'validate-dq-definition'"  [title]="'Validate'" [icon] = "'validate.svg'"></app-search-tile>
         </div>    
     </div>
 
-    <div class="row">
-        <div class="col">
+    <div class="row tile-row">
+        <div class="col-3">
             <app-search-tile [path]="'api-interface'"  [title]="'API Interface'" [icon] = "'connect.svg'"></app-search-tile>
         </div>
-        <div class="col">
+        <div class="col-3">
             <app-search-tile  [path]="'reference-data'" [title]="'Reference Data'" [icon] = "'static-list.svg'"></app-search-tile>
         </div>
         

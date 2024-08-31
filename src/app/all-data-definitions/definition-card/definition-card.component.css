@@ -1,0 +1,21 @@
+:host{
+    .chip{
+        background-color: #0033aa;
+        color: white;
+        min-width: 100px;
+        justify-content: center;
+    }
+
+    .mat-tab-label.mat-tab-label-active {
+        color: #0033aa;
+        font-weight: 700;
+    }
+    .mat-card-title{
+        font-weight: lighter;
+        color: #0033aa;
+    }
+    .code{
+        color: #0033aa;
+        margin-top: 10px;
+    }
+}

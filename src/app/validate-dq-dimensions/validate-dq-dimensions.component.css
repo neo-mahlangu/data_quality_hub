@@ -11,8 +11,9 @@
         color: white;
     }
 
-    mat-card-content{
+    mat-card{
         display:flex;
-        width:100%
+        justify-content: center;
+        width: 100%;
     }
 }

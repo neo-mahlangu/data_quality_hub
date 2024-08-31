@@ -15,6 +15,10 @@ import { ApiInterfaceComponent } from './api-interface/api-interface.component';
 import { ApiValidateDataComponent } from './api-interface/api-validate-data/api-validate-data.component';
 import { ApiStaticDataComponent } from './api-interface/api-static-data/api-static-data.component';
 import { AllReferenceDataComponent } from './all-reference-data/all-reference-data.component';
+import { AllDataDefinitionsComponent } from './all-data-definitions/all-data-definitions.component';
+import { DefinitionCardComponent } from './all-data-definitions/definition-card/definition-card.component';
+import { ViewReferenceDataComponent } from './all-reference-data/view-reference-data/view-reference-data.component';
+import { ViewDataDefinitionComponent } from './all-data-definitions/view-data-definition/view-data-definition.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { AllReferenceDataComponent } from './all-reference-data/all-reference-da
     ApiInterfaceComponent,
     ApiStaticDataComponent,
     ApiValidateDataComponent,
-    AllReferenceDataComponent
+    AllReferenceDataComponent,
+    AllDataDefinitionsComponent,
+    DefinitionCardComponent,
+    ViewReferenceDataComponent,
+    ViewDataDefinitionComponent
 
   ],
   imports: [

@@ -1,17 +1,17 @@
 <mat-card appearance="outlined">
     <mat-card-title-group>
-        <mat-card-title> Email validation</mat-card-title>
-        <mat-card-subtitle>Verify whether emails are formatted correctly</mat-card-subtitle>
+        <mat-card-title> {{ dataQualityDefinitions.name }}</mat-card-title>
+        <mat-card-subtitle>{{ dataQualityDefinitions.description }}</mat-card-subtitle>
         <mat-chip-list aria-label="Fish selection">
-            <mat-chip class="chip">Consistency</mat-chip>
+            <mat-chip class="chip">{{ dataQualityDefinitions.dimension }}</mat-chip>
         </mat-chip-list>
       </mat-card-title-group>
     <mat-card-content>
         <!-- if substring(orgkey,1,3) = '103' then Last_name exists and len(trim(Last_name)) > 1 and Last_name matches_regex '^[A-Za-z]$* -->
       <mat-tab-group *ngIf="displayTab" mat-stretch-tabs="false" mat-align-tabs="start">
-        <mat-tab class="tab" label="Python"><p class="code">if substring(orgkey,1,3) = '103' then Last_name exists and len(trim(Last_name)) > 1 and Last_name matches_regex '^[A-Za-z]$*'"</p></mat-tab>
-        <mat-tab label="C#"><p class="code">if substring(orgkey,1,3) = '103' then Last_name exists and len(trim(Last_name)) > 1 and Last_name matches_regex '^[A-Za-z]$*'"</p></mat-tab>
-        <mat-tab label="Java"><p class="code">if substring(orgkey,1,3) = '103' then Last_name exists and len(trim(Last_name)) > 1 and Last_name matches_regex '^[A-Za-z]$*'"</p></mat-tab>
+        <mat-tab class="tab" label="Python"><p class="code">{{ dataQualityDefinitions.python }}</p></mat-tab>
+        <mat-tab label="C#"><p class="code">{{ dataQualityDefinitions.c }}</p></mat-tab>
+        <mat-tab label="Java"><p class="code">{{ dataQualityDefinitions.java }}"</p></mat-tab>
       </mat-tab-group>
     </mat-card-content>
     </mat-card>

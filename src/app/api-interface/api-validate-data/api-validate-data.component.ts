@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 
-export interface PeriodicElement {
+export interface Request {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  value: string;
 }
 
-
+export interface Response {
+  name: string;
+  value: string;
+  expression:string;
+  results: string;
+}
 
 
 @Component({
@@ -18,11 +21,30 @@ export interface PeriodicElement {
 })
 export class ApiValidateDataComponent implements OnInit {
 
-  ELEMENT_DATA: PeriodicElement[] = [
-    {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-    {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-    {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'}
+  ELEMENT_DATA: Request[] = [
+    { name: 'Name', value: "siyabonga"},
+    { name: 'Email', value: "siya.dlamini@standardbank.co.za"},
+    {name: 'Id', value: "95124387374"}
   ];
+
+  response: Response[] = [
+    {
+      name: 'Name', value: "siyabonga",
+      expression: 'wrwtr 4546',
+      results: 'Fail'
+    },
+    {
+      name: 'Email', value: "siya.dlamini@standardbank.co.za",
+      expression: "Address EXISTS AND len(trim(Address)) <> 0",
+      results: 'Pass'
+    },
+    {
+      name: 'Id', value: "95124387374",
+      expression: "Address EXISTS AND len(trim(Address)) <> 0",
+      results: 'Pass'
+    }
+  ];
+
 
   constructor() { }
 

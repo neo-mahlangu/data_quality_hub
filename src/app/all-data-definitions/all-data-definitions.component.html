@@ -1,5 +1,5 @@
 
 
 <div class="container">
-      <app-definition-card (click)="navigate()" class="card" *ngFor="let index of [0,1,2,3]"></app-definition-card>
+      <app-definition-card (click)="navigate(this.index)" class="card"  [dataQualityDefinitions]="this.index" *ngFor= "let index of dataQualityDefinitions"></app-definition-card>
 </div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataQualityDefinition } from 'src/app/models/data-quality-definition.model';
 
 @Component({
   selector: 'app-view-data-definition',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-data-definition.component.css']
 })
 export class ViewDataDefinitionComponent implements OnInit {
+  dataFromRoute: any;
 
-  constructor() { }
+  constructor(private _router: Router) { 
+    // this.dataFromRoute = this._router.getCurrentNavigation().extras.state?.['someData'];
+    // this.name = this._router.getCurrentNavigation().extras.state.someData;
+
+  }
+
+
+  @Input()
+  dataQualityDefinitions!: DataQualityDefinition;
 
   ngOnInit(): void {
+    this.dataQualityDefinitions = history.state.someData;
+    console.log(this.dataFromRoute)
+
+    // this.dataFromRoute = this._router.getCurrentNavigation().extras.state?.['someData'];
   }
+
 
 }

@@ -19,6 +19,8 @@ import { AllDataDefinitionsComponent } from './all-data-definitions/all-data-def
 import { DefinitionCardComponent } from './all-data-definitions/definition-card/definition-card.component';
 import { ViewReferenceDataComponent } from './all-reference-data/view-reference-data/view-reference-data.component';
 import { ViewDataDefinitionComponent } from './all-data-definitions/view-data-definition/view-data-definition.component';
+import { HttpClientModule } from  '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { ViewDataDefinitionComponent } from './all-data-definitions/view-data-de
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PeriodicElement } from 'src/app/api-interface/api-validate-data/api-validate-data.component';
+import { ReferenceData } from 'src/app/models/reference-data.model';
+import { DqHubService } from 'src/app/service/dq-hub.service';
 
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'}
-];
+const ELEMENT_DATA: ReferenceData[] = [];
 
 @Component({
   selector: 'app-view-reference-data',
@@ -16,12 +13,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ViewReferenceDataComponent implements OnInit {
 
 
-  displayedColumns: string[] = [ 'name', 'description'];
+  displayedColumns: string[] = [ 'code', 'value'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private _dqHubService :DqHubService) { }
+
+
 
   ngOnInit(): void {
+    this._dqHubService.getReferenceData().subscribe(
+      (response) => { this.dataSource = response; console.log(response); },
+      (error) => { console.log(error); });
   }
 
 }

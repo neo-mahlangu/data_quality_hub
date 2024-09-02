@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PeriodicElement } from '../api-validate-data/api-validate-data.component';
+
+
+export interface Request {
+  table_name: string;
+}
+
+export interface Response {
+  code: string;
+  value: string;
+}
 
 @Component({
   selector: 'app-api-static-data',
@@ -8,13 +17,13 @@ import { PeriodicElement } from '../api-validate-data/api-validate-data.componen
 })
 export class ApiStaticDataComponent implements OnInit {
 
-  ELEMENT_DATA: PeriodicElement = {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'};
+  request: Request = {table_name: "static_emails"};
 ;
   
-  ELEMENT_DATA1: PeriodicElement[] = [
-    {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-    {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-    {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'}
+  response: Response[] = [
+    {code: "1", value: 'Hydrogen'},
+    {code: "2", value: 'Helium'},
+    {code: "3", value: 'Lithium'}
   ];
 
   constructor() { }

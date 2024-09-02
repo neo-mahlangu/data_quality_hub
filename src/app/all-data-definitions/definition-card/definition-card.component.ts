@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataQualityDefinition } from 'src/app/models/data-quality-definition.model';
 
 @Component({
   selector: 'app-definition-card',
@@ -9,6 +10,9 @@ export class DefinitionCardComponent implements OnInit {
 
   @Input()
   displayTab!: boolean;
+
+  @Input()
+  dataQualityDefinitions!: DataQualityDefinition;
   
   constructor() { }
 

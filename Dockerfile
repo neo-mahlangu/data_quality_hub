@@ -12,5 +12,5 @@ RUN npm install
 
 COPY . .
 
-RUN npm run ng build -- --configuration=$APP_ENV
+RUN npm run ng build -- --configuration=PROD
 EXPOSE 8081 8080 80

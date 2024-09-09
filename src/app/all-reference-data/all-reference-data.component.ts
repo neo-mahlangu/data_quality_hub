@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DqHubService } from '../service/dq-hub.service';
-import { ReferenceTable } from '../models/reference-tables.model';
+import { ReferenceTable } from '../models/reference-data.model';
+
 
 
 @Component({
@@ -13,16 +14,17 @@ import { ReferenceTable } from '../models/reference-tables.model';
 export class AllReferenceDataComponent implements OnInit {
   displayedColumns: string[] = [ 'name', 'description','actions'];
   data: any;
-  ELEMENT_DATA: ReferenceTable[] = [];
-  dataSource = this.ELEMENT_DATA;
+  dataSource: ReferenceTable[] = [];
 
   constructor(private _router: Router,private _dqHubService :DqHubService) { }
 
 
   ngOnInit(): void {
-    const d = history.state.someData;
+    const d = history.state.searchData;
+    console.log(d);
+
     this._dqHubService.getReferenceTables().subscribe(
-      (response) => { this.dataSource = response; console.log(response); },
+      (response) => { this.dataSource = response; console.log(d); },
       (error) => { console.log(error); });
   }
 

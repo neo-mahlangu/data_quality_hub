@@ -1,6 +1,7 @@
 
-export interface ReferenceData {
+export interface ReferenceTable {
     name: string;
     description: number;
+    id:number;
   }
   

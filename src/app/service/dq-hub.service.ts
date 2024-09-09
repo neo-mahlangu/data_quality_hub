@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ReferenceTable } from '../models/reference-tables.model';
-import { ReferenceData } from '../models/reference-data.model';
+import { ReferenceData } from '../models/reference-tables.model';
+import { ReferenceTable } from '../models/reference-data.model';
 import { DataQualityDefinition } from '../models/data-quality-definition.model';
 import { ValidateDQDefinition } from '../models/validate-data.model';
+import { SearchDQDefinition } from '../models/validate-data.model copy';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,18 @@ export class DqHubService {
     return <Observable<string>><unknown>this._httpClient.post('http://127.0.0.1:5000/validate-dq-dimension',dq);
   }
 
-  getDQDimensions(): Observable<DataQualityDefinition[]> {
-    return <Observable<DataQualityDefinition[]>>this._httpClient.get('http://127.0.0.1:5000/dq-dimensions');
+  getDQDimensions(search : SearchDQDefinition): Observable<DataQualityDefinition[]> {
+    console.log(search)
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let params = new URLSearchParams();
+    params.append("name", search?.name)
+    params.append("dimension", search?.dimension)
+
+    return <Observable<DataQualityDefinition[]>><unknown>this._httpClient.get('http://127.0.0.1:5000/dq-dimensions', {
+      params: { ...search }
+    });
   }
 
   getReferenceTables(): Observable<ReferenceTable[]> {

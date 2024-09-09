@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DqHubService } from '../service/dq-hub.service';
-import { Observable } from 'rxjs';
 import { DataQualityDefinition } from '../models/data-quality-definition.model';
 
 @Component({
@@ -16,10 +15,8 @@ export class AllDataDefinitionsComponent implements OnInit {
   constructor(private _router: Router, private _dqHubService :DqHubService) { }
 
   ngOnInit(): void {
-    // this.data$ = this._dqHubService.getDQDimensions();
-    const d = history.state.someData;
-
-    this._dqHubService.getDQDimensions().subscribe(
+    // const d = history.state.searchData;
+    this._dqHubService.getDQDimensions(history.state.searchData).subscribe(
       (response) => { this.dataQualityDefinitions = response; console.log(response); },
       (error) => { console.log(error); });
   }

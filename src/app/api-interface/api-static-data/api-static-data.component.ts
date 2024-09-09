@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 export interface Request {
-  table_name: string;
+  tableId: string;
 }
 
 export interface Response {
@@ -17,7 +17,7 @@ export interface Response {
 })
 export class ApiStaticDataComponent implements OnInit {
 
-  request: Request = {table_name: "static_emails"};
+  request: Request = {tableId: "1"};
 ;
   
   response: Response[] = [

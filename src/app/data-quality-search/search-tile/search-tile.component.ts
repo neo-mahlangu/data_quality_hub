@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReferenceTable } from 'src/app/models/reference-data.model';
+import { ReferenceData } from 'src/app/models/reference-tables.model';
+import { DqHubService } from 'src/app/service/dq-hub.service';
 
 @Component({
   selector: 'app-search-tile',
@@ -16,17 +19,14 @@ export class SearchTileComponent implements OnInit {
 
   @Input()
   path!: string;
-
-  constructor(private _router: Router) { }
+  
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
+
   }
 
   navigate() {
-    // this.router(path);
-    // this.router.canActivate;
     this._router.navigate([this.path]);
-    // this._router.navigateByUrl(this.path);
 } 
-
 }

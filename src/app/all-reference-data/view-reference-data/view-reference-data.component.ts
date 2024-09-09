@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ReferenceData } from 'src/app/models/reference-data.model';
+import { ReferenceData } from 'src/app/models/reference-tables.model';
 import { DqHubService } from 'src/app/service/dq-hub.service';
 
 

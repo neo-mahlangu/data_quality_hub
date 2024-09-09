@@ -1,8 +1,8 @@
 
 export class DataQualityDefinition {
     name!: string;
-    description!: number;
-    dimension!: string;
+    description!: string;
+    dimension!: number;
     java!: string;
     python!: string;
     c!: string;

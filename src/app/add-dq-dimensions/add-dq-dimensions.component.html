@@ -15,19 +15,17 @@
                 <input matInput #input required placeholder="Eg: Email"
                 formControlName="description" />
               </mat-form-field>
-         
-              <mat-form-field>
+
+              <mat-form-field  *ngIf = "dataDimensions">
                 <mat-label>Dimension</mat-label>
                 <mat-select formControlName="dimension">
                   <mat-option 
-                    value="1">Option</mat-option>
-                    <mat-option 
-                    value="2">Test</mat-option>
+                  value="">None</mat-option>
+                  <mat-option *ngFor="let data of dataDimensions"
+                    value={{data.id}}>{{ data.code}}</mat-option>
                 </mat-select>
               </mat-form-field>
-
-             
-
+              
               <mat-form-field>
                 <mat-label>Java Expression</mat-label>
                 <input matInput #input  required
@@ -46,23 +44,12 @@
                 formControlName="python"/>
               </mat-form-field>
 
-              <!-- <mat-form-field>
-                <mat-label>Reference Data Table</mat-label>
-                <mat-select>
-                <mat-option value="" formControlName="refDataTable">None</mat-option> -->
-                <!-- <mat-option *ngFor="let data of refData | async" [value]="">
-                  {{data.value}}
-                </mat-option> -->
-              <!-- </mat-select>
-              </mat-form-field> -->
-
-              <mat-form-field>
-                <mat-label>Reference Data Table</mat-label>
-                <mat-select>
+              <mat-form-field *ngIf="dataTables">
+                <mat-label>Related Data Table</mat-label>
+                <mat-select formControlName="refDataTable">
                   <mat-option value="">None</mat-option>
-                  
-                  <!-- <mat-option *ngFor="let data of refData$ | async" [value]="">{{ data.value }}</mat-option> -->
-
+                  <mat-option *ngFor="let data of dataTables" 
+                  value={{data.id}}>{{data.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
          

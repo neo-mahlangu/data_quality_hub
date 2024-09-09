@@ -18,14 +18,10 @@ export class ViewDataDefinitionComponent implements OnInit {
 
 
   @Input()
-  dataQualityDefinitions!: DataQualityDefinition;
+  dataQualityDefinition!: DataQualityDefinition;
 
   ngOnInit(): void {
-    this.dataQualityDefinitions = history.state.someData;
-    console.log(this.dataFromRoute)
-
-    // this.dataFromRoute = this._router.getCurrentNavigation().extras.state?.['someData'];
+    this.dataQualityDefinition = history.state.someData;
+    
   }
-
-
 }

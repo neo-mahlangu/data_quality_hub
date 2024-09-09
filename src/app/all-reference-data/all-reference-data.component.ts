@@ -4,13 +4,6 @@ import { DqHubService } from '../service/dq-hub.service';
 import { ReferenceTable } from '../models/reference-tables.model';
 
 
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-//   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-//   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'}
-// ];
-
-
 @Component({
   selector: 'app-all-reference-data',
   templateUrl: './all-reference-data.component.html',
@@ -33,8 +26,14 @@ export class AllReferenceDataComponent implements OnInit {
       (error) => { console.log(error); });
   }
 
-  navigate() {
-    this._router.navigate(["view-reference-data"]);
+  navigate(selectedId: string) {
+    // this._router.navigate(["view-reference-data"],);
+
+    this._router.navigate(['view-reference-data'], {
+      state: {
+        someData: selectedId,
+      },
+    });
 } 
 
 }

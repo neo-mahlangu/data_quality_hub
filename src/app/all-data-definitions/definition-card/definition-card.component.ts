@@ -12,7 +12,7 @@ export class DefinitionCardComponent implements OnInit {
   displayTab!: boolean;
 
   @Input()
-  dataQualityDefinitions!: DataQualityDefinition;
+  dataQualityDefinition!: DataQualityDefinition;
   
   constructor() { }
 

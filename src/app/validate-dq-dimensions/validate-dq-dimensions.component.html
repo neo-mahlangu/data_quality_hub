@@ -1,23 +1,26 @@
 <div class="container">
-    <mat-card appearance="outlined">
-        <mat-card-header>
+    <mat-card class="mat-card"  appearance="outlined">
+        <!-- <mat-card-header>
             <mat-card-title>Validate Data Quality Definitions</mat-card-title>
-        </mat-card-header>
+        </mat-card-header> -->
+        <br>
+        <div [formGroup]="validateFormGroup">
         <mat-card-content >
                 <mat-form-field>
                   <mat-label>Data To Be Validated</mat-label>
-                  <input matInput #input required />
+                  <input matInput #input required formControlName="data" />
                 </mat-form-field>
   
-           
                 <mat-form-field>
                   <mat-label>DQ Dimension</mat-label>
-                  <mat-select>
+                  <mat-select formControlName="dqDefinition">
                     <mat-option value="option">Option</mat-option>
                   </mat-select>
                 </mat-form-field>
 
-                <button mat-raised-button>Validate Rule Definition</button>
+                <button (click)="validateData()" mat-raised-button>Validate Rule Definition</button>
         </mat-card-content>
+      </div>
       </mat-card>
     </div>
+    <app-progress-bar [display]="progressBar"></app-progress-bar>

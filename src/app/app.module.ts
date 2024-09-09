@@ -20,6 +20,7 @@ import { DefinitionCardComponent } from './all-data-definitions/definition-card/
 import { ViewReferenceDataComponent } from './all-reference-data/view-reference-data/view-reference-data.component';
 import { ViewDataDefinitionComponent } from './all-data-definitions/view-data-definition/view-data-definition.component';
 import { HttpClientModule } from  '@angular/common/http';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 
 @NgModule({
@@ -38,8 +39,8 @@ import { HttpClientModule } from  '@angular/common/http';
     AllDataDefinitionsComponent,
     DefinitionCardComponent,
     ViewReferenceDataComponent,
-    ViewDataDefinitionComponent
-
+    ViewDataDefinitionComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

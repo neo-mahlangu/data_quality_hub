@@ -1,19 +1,25 @@
 :host{
 
     mat-form-field{
-        width: 80%;
+        width: 100%;
         margin-top: 10px;
     }
 
+    mat-card-title{
+        display: flex;
+        justify-content: center;
+    }
+
     button{
-        width: 80%;
+        width: 100%;
         background-color:#0033aa ;
         color: white;
     }
 
-    mat-card{
-        display:flex;
+    .mat-card{
+        display: flex;
         justify-content: center;
-        width: 100%;
+        /* justify-content:; */
+        /* width: 100%; */
     }
 }

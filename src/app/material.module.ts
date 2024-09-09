@@ -9,6 +9,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 
 
 @NgModule({
@@ -17,7 +22,8 @@ import {MatChipsModule} from '@angular/material/chips';
   exports: [MatInputModule, 
     MatToolbarModule, MatButtonModule, MatIconModule, 
     MatFormFieldModule,MatCardModule, 
-    MatSelectModule,MatTabsModule,MatTableModule,MatChipsModule,MatChipsModule]
+    MatSelectModule,MatTabsModule,MatTableModule,MatChipsModule,MatChipsModule, 
+    MatAutocompleteModule,ReactiveFormsModule,MatProgressBarModule]
 })
 export class MaterialModule {}
 

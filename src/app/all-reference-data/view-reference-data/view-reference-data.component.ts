@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ReferenceData } from 'src/app/models/reference-data.model';
 import { DqHubService } from 'src/app/service/dq-hub.service';
 
@@ -16,14 +16,33 @@ export class ViewReferenceDataComponent implements OnInit {
   displayedColumns: string[] = [ 'code', 'value'];
   dataSource = ELEMENT_DATA;
 
-  constructor(private _dqHubService :DqHubService) { }
+ @Input()
+  id!: string;
+
+  constructor(private _dqHubService :DqHubService) { 
+
+    if(!this.id){
+      this.id = history.state.someData;
+    }
+    else{
+      this.id = history.state.someData;
+    }
+      
+      console.log(this.id)
+      this._dqHubService.getReferenceData('1').subscribe(
+        (response) => { this.dataSource = response; console.log(response); },
+        (error) => { console.log(error); });
+  }
 
 
 
   ngOnInit(): void {
-    this._dqHubService.getReferenceData().subscribe(
-      (response) => { this.dataSource = response; console.log(response); },
-      (error) => { console.log(error); });
+    // if()
+    // this.id = history.state.someData;
+    // console.log(this.id)
+    // this._dqHubService.getReferenceData(this.id).subscribe(
+    //   (response) => { this.dataSource = response; console.log(response); },
+    //   (error) => { console.log(error); });
   }
 
 }

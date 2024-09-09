@@ -1,23 +1,28 @@
 <div class="container">
-  <mat-card appearance="outlined">
-      <mat-card-header>
-          <mat-card-title>Add Data Quality Definitions</mat-card-title>
-      </mat-card-header>
-      <mat-card-content class="d-block">
+  <h1>Add Data Quality Definitions</h1>
+  <mat-card class="card" appearance="outlined">
+      <div [formGroup]="addFormGroup">
+        <mat-card-content >
               <mat-form-field>
                 <mat-label>Name</mat-label>
-                <input matInput #input required />
+                <input matInput #input required 
+                formControlName="name"
+                />
               </mat-form-field>
-
+              
               <mat-form-field>
                 <mat-label>Description</mat-label>
-                <input matInput #input required placeholder="Eg: Email" />
+                <input matInput #input required placeholder="Eg: Email"
+                formControlName="description" />
               </mat-form-field>
          
               <mat-form-field>
                 <mat-label>Dimension</mat-label>
-                <mat-select>
-                  <mat-option value="option">Option</mat-option>
+                <mat-select formControlName="dimension">
+                  <mat-option 
+                    value="1">Option</mat-option>
+                    <mat-option 
+                    value="2">Test</mat-option>
                 </mat-select>
               </mat-form-field>
 
@@ -25,20 +30,45 @@
 
               <mat-form-field>
                 <mat-label>Java Expression</mat-label>
-                <input matInput #input  required/>
+                <input matInput #input  required
+                formControlName="java"/>
               </mat-form-field>
 
               <mat-form-field>
                 <mat-label>C# Expression</mat-label>
-                <input matInput #input required />
+                <input matInput #input required
+                formControlName="c" />
               </mat-form-field>
 
               <mat-form-field>
                 <mat-label>Python </mat-label>
-                <input matInput #input required />
+                <input matInput #input required 
+                formControlName="python"/>
+              </mat-form-field>
+
+              <!-- <mat-form-field>
+                <mat-label>Reference Data Table</mat-label>
+                <mat-select>
+                <mat-option value="" formControlName="refDataTable">None</mat-option> -->
+                <!-- <mat-option *ngFor="let data of refData | async" [value]="">
+                  {{data.value}}
+                </mat-option> -->
+              <!-- </mat-select>
+              </mat-form-field> -->
+
+              <mat-form-field>
+                <mat-label>Reference Data Table</mat-label>
+                <mat-select>
+                  <mat-option value="">None</mat-option>
+                  
+                  <!-- <mat-option *ngFor="let data of refData$ | async" [value]="">{{ data.value }}</mat-option> -->
+
+                </mat-select>
               </mat-form-field>
          
-              <button mat-raised-button>Add Rule Definition</button>
-      </mat-card-content>
+              <button mat-raised-button (click)="addDqDimension()">Add Rule Definition</button>
+        </mat-card-content>
+      </div>
     </mat-card>
   </div>
+  <app-progress-bar [display]="progressBar"></app-progress-bar>

@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Reference Values</h1>
+    <h1>Reference Tables</h1>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="name">
@@ -14,7 +14,7 @@
 
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef width="20%"> Actions </th>
-        <td (click)="navigate()" mat-cell *matCellDef="let element"><mat-icon><span class="material-symbols-outlined">
+        <td (click)="navigate(element.id)" mat-cell *matCellDef="let element"><mat-icon><span class="material-symbols-outlined">
             arrow_forward
             </span></mat-icon>
         </td>

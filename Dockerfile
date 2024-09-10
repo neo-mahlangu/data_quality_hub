@@ -21,7 +21,7 @@ FROM nginx:alpine
  
 
 # Copy the built Angular app from the build stage to the Nginx HTML directory
-COPY --from=build /app/dist/dq-hub /usr/share/nginx/html
+COPY --from=build /dist/dq-hub /usr/share/nginx/html
 
 # Expose port 80 for the Nginx server
 EXPOSE 80

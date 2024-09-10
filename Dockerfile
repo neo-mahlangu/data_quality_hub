@@ -18,7 +18,14 @@ COPY . ./
 RUN ng build --configuration production --base-href='/data_quality_hub/' --deploy-url='./'
  
 FROM nginx:alpine
-COPY --from=app /usr/src/app/dist/angular-docker/browser /usr/share/nginx/html 
-RUN ls /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+ 
+
+# Copy the built Angular app from the build stage to the Nginx HTML directory
+COPY --from=build /app/dist/your-angular-app /usr/share/nginx/html
+
+# Expose port 80 for the Nginx server
 EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+

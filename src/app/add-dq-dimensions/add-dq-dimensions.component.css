@@ -11,13 +11,13 @@
     } */
 
     mat-form-field{
-        width: 80%;
+        width: 100%;
         margin-top: 5px;
         /* justify-content: center; */
     }
 
     button{
-        width: 80%;
+        width: 100%;
         background-color:#0033aa ;
         color: white;
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DqHubService } from '../service/dq-hub.service';
 import { ValidateDQDefinition } from '../models/validate-data.model';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DataQualityDefinition } from '../models/data-quality-definition.model';
 
 @Component({
   selector: 'app-validate-dq-dimensions',
@@ -14,12 +15,19 @@ export class ValidateDqDimensionsComponent implements OnInit {
   constructor(private _dqHubService :DqHubService) { }
   progressBar = false;
 
+  dataQualityDefinitions!: DataQualityDefinition[];
+  
+
   ngOnInit(): void {
 
     this.validateFormGroup = new FormGroup({
       data: new FormControl('Sita'),
       dqDefinition: new FormControl('tes'),
     });
+
+       this._dqHubService.getDQDimensions(history.state.searchData).subscribe(
+      (response) => { this.dataQualityDefinitions = response; console.log(response); },
+      (error) => { console.log(error); });
 
   }
 

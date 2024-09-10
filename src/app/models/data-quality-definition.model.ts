@@ -1,5 +1,6 @@
 
 export class DataQualityDefinition {
+    id!: string;
     name!: string;
     description!: string;
     dimension!: number;

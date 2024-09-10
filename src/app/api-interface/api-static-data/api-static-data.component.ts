@@ -21,9 +21,9 @@ export class ApiStaticDataComponent implements OnInit {
 ;
   
   response: Response[] = [
-    {code: "1", value: 'Hydrogen'},
-    {code: "2", value: 'Helium'},
-    {code: "3", value: 'Lithium'}
+    {code: "ZA", value: 'South Africa'},
+    {code: "USA", value: 'United States Of America'},
+    {code: "AU", value: 'Australia'}
   ];
 
   constructor() { }

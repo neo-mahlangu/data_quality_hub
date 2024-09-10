@@ -29,11 +29,11 @@ export class AddDqDimensionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.addFormGroup = new FormGroup({
-      name: new FormControl('Sita'),
-      description: new FormControl('tes'),
-      java: new FormControl('test'),
-      c: new FormControl('test'),
-      python: new FormControl('test'),
+      name: new FormControl(''),
+      description: new FormControl(''),
+      java: new FormControl(''),
+      c: new FormControl(''),
+      python: new FormControl(''),
       dimension: new FormControl(''),
       refDataTable: new FormControl('')
     });  

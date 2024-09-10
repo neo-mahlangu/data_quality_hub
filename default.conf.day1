@@ -1,0 +1,10 @@
+server {
+    listen 8080;
+    location / {
+        root   /var/www/htdocs/customer-information-file-app;
+        # root /usr/share/nginx/html/customer-information-file-app;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+        # This will allow you to refresh page in your angular app. Which will not give error 404.
+    }
+}

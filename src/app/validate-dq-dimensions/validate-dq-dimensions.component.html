@@ -11,10 +11,10 @@
                   <input matInput #input required formControlName="data" />
                 </mat-form-field>
   
-                <mat-form-field>
-                  <mat-label>DQ Dimension</mat-label>
+                <mat-form-field *ngIf="dataQualityDefinitions">
+                  <mat-label>Data Quality Definition</mat-label>
                   <mat-select formControlName="dqDefinition">
-                    <mat-option value="option">Option</mat-option>
+                    <mat-option *ngFor="let data of dataQualityDefinitions" value={{data.id}}>{{data.name}}</mat-option>
                   </mat-select>
                 </mat-form-field>
 

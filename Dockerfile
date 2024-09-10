@@ -17,8 +17,8 @@ ENV PATH="./node_modules/.bin:$PATH"
 COPY . ./
 RUN ng build --configuration production --base-href='/data_quality_hub/' --deploy-url='./'
  
-FROM 912346747658.dkr.ecr.af-south-1.amazonaws.com/dayone/nginx
-COPY default.conf.day1 /etc/nginx/conf.d/default.conf
-USER www-data
-COPY --from=builder --chown=www-data:www-data /opt/web/dist /var/www/htdocs
-CMD ["nginx", "-g", "daemon off;"]
+FROM nginx:alpine
+COPY --from=app /usr/src/app/dist/angular-docker/browser /usr/share/nginx/html 
+RUN ls /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

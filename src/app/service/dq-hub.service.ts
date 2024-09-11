@@ -5,25 +5,27 @@ import { ReferenceData } from '../models/reference-tables.model';
 import { ReferenceTable } from '../models/reference-data.model';
 import { DataQualityDefinition } from '../models/data-quality-definition.model';
 import { ValidateDQDefinition } from '../models/validate-data.model';
-import { SearchDQDefinition } from '../models/validate-data.model copy';
+import { SearchDQDefinition } from '../models/search-data.model';
+import { ValigateResponse } from '../models/validate-response.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DqHubService {
   
+  url = 'http://127.0.0.1:5000/';
   constructor(private _httpClient: HttpClient) { }
 
   getDQDimensions1(){
-    return this._httpClient.get('http://127.0.0.1:5000/dq-dimensions');
+    return this._httpClient.get(this.url+'dq-dimensions');
   }
 
   addDQDimension(dq : DataQualityDefinition ): Observable<string> {
-    return <Observable<string>><unknown>this._httpClient.post('http://127.0.0.1:5000/add-dq-dimension',dq);
+    return <Observable<string>><unknown>this._httpClient.post(this.url+'add-dq-dimension',dq);
   }
 
-  validateDQDimension(dq : ValidateDQDefinition ): Observable<string> {
-    return <Observable<string>><unknown>this._httpClient.post('http://127.0.0.1:5000/validate-dq-dimension',dq);
+  validateDQDimension(dq : ValidateDQDefinition ): Observable<ValigateResponse> {
+    return <Observable<ValigateResponse>><unknown>this._httpClient.post(this.url+'validate-dq-dimension',dq);
   }
 
   getDQDimensions(search : SearchDQDefinition): Observable<DataQualityDefinition[]> {
@@ -35,16 +37,16 @@ export class DqHubService {
     params.append("name", search?.name)
     params.append("dimension", search?.dimension)
 
-    return <Observable<DataQualityDefinition[]>><unknown>this._httpClient.get('http://127.0.0.1:5000/dq-dimensions', {
+    return <Observable<DataQualityDefinition[]>><unknown>this._httpClient.get(this.url+'dq-dimensions', {
       params: { ...search }
     });
   }
 
   getReferenceTables(): Observable<ReferenceTable[]> {
-    return <Observable<ReferenceTable[]>>this._httpClient.get('http://127.0.0.1:5000/reference-tables');
+    return <Observable<ReferenceTable[]>>this._httpClient.get(this.url+'reference-tables');
   }
 
   getReferenceData(id:string): Observable<ReferenceData[]> {
-    return <Observable<ReferenceData[]>>this._httpClient.get(`http://127.0.0.1:5000/reference-data/${id}`);
+    return <Observable<ReferenceData[]>>this._httpClient.get(`${this.url}reference-data/${id}`);
   }
 }

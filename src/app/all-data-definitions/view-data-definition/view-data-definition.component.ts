@@ -8,7 +8,6 @@ import { DataQualityDefinition } from 'src/app/models/data-quality-definition.mo
   styleUrls: ['./view-data-definition.component.css']
 })
 export class ViewDataDefinitionComponent implements OnInit {
-  dataFromRoute: any;
 
   constructor(private _router: Router) { 
     // this.dataFromRoute = this._router.getCurrentNavigation().extras.state?.['someData'];
@@ -20,8 +19,12 @@ export class ViewDataDefinitionComponent implements OnInit {
   @Input()
   dataQualityDefinition!: DataQualityDefinition;
 
+  refTableId!: string;
+
   ngOnInit(): void {
     this.dataQualityDefinition = history.state.someData;
+    this.refTableId = this.dataQualityDefinition.refDataTable
+    //  console.log(this.dataQualityDefinition)
     
   }
 }

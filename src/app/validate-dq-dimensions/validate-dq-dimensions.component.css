@@ -22,4 +22,11 @@
         /* justify-content:; */
         /* width: 100%; */
     }
+
+    .validateMessage{
+        background-color: #0033aa;
+        display: flex;
+        justify-content: center;
+        
+    }
 }

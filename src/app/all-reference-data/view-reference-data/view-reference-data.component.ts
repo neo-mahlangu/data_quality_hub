@@ -21,28 +21,26 @@ export class ViewReferenceDataComponent implements OnInit {
 
   constructor(private _dqHubService :DqHubService) { 
 
-    if(!this.id){
-      this.id = history.state.someData;
-    }
-    else{
-      this.id = history.state.someData;
-    }
-      
-      console.log(this.id)
-      this._dqHubService.getReferenceData('1').subscribe(
-        (response) => { this.dataSource = response; console.log(response); },
-        (error) => { console.log(error); });
+    // if(!this.id){
+    //   this.id = history.state.someData;
+    // }
+
+      // console.log(this.id)
+      // this._dqHubService.getReferenceData(this.id).subscribe(
+      //   (response) => { this.dataSource = response; console.log(response); },
+      //   (error) => { console.log(error); });
   }
 
 
 
   ngOnInit(): void {
-    // if()
-    // this.id = history.state.someData;
-    // console.log(this.id)
-    // this._dqHubService.getReferenceData(this.id).subscribe(
-    //   (response) => { this.dataSource = response; console.log(response); },
-    //   (error) => { console.log(error); });
+    console.log(this.id)
+    if(!this.id){
+        this.id = history.state.someData;
+      }
+    this._dqHubService.getReferenceData(this.id).subscribe(
+      (response) => { this.dataSource = response; console.log(response); },
+      (error) => { console.log(error); });
   }
 
 }

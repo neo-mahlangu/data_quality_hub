@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ReferenceTable } from 'src/app/models/reference-data.model';
 import { ReferenceData } from 'src/app/models/reference-tables.model';
-import { SearchDQDefinition } from 'src/app/models/validate-data.model copy';
+import { SearchDQDefinition } from 'src/app/models/search-data.model';
 import { DqHubService } from 'src/app/service/dq-hub.service';
 
 @Component({

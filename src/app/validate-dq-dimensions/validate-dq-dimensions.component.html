@@ -13,14 +13,23 @@
   
                 <mat-form-field *ngIf="dataQualityDefinitions">
                   <mat-label>Data Quality Definition</mat-label>
-                  <mat-select formControlName="dqDefinition">
+                  <mat-select required="true" formControlName="dqDefinition">
                     <mat-option *ngFor="let data of dataQualityDefinitions" value={{data.id}}>{{data.name}}</mat-option>
                   </mat-select>
                 </mat-form-field>
-
                 <button (click)="validateData()" mat-raised-button>Validate Rule Definition</button>
         </mat-card-content>
+        
       </div>
       </mat-card>
+      <div style="margin-top: 20px; color:white;" *ngIf="validateResponse">
+        <h1>Response</h1>
+        <div class = "validateMessage" >
+          <h1>Message : {{validateResponse?.message}}</h1>
+        </div>
+        <div class = "validateMessage" >
+          <h1> Status : {{validateResponse?.status}}</h1>
+        </div>
+      </div>
     </div>
     <app-progress-bar [display]="progressBar"></app-progress-bar>

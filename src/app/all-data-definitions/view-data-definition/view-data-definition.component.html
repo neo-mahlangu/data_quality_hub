@@ -1,6 +1,6 @@
 <div class="container">
     <app-definition-card [dataQualityDefinition]="this.dataQualityDefinition" [displayTab] = "true"  class="card"></app-definition-card>
 </div>
-<app-view-reference-data [id]="this.dataQualityDefinition.refDataTable" *ngIf="this.dataQualityDefinition.refDataTable"></app-view-reference-data>
+<app-view-reference-data [id]="this.refTableId" *ngIf="this.dataQualityDefinition?.refDataTable"></app-view-reference-data>
 <!-- 
 [id]=1 -->

@@ -3,6 +3,8 @@ import { DqHubService } from '../service/dq-hub.service';
 import { ValidateDQDefinition } from '../models/validate-data.model';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DataQualityDefinition } from '../models/data-quality-definition.model';
+import { ValigateResponse } from '../models/validate-response.model';
+
 
 @Component({
   selector: 'app-validate-dq-dimensions',
@@ -14,9 +16,9 @@ export class ValidateDqDimensionsComponent implements OnInit {
   validateFormGroup!: FormGroup;
   constructor(private _dqHubService :DqHubService) { }
   progressBar = false;
+  validateResponse!: ValigateResponse;
 
   dataQualityDefinitions!: DataQualityDefinition[];
-  
 
   ngOnInit(): void {
 
@@ -24,23 +26,24 @@ export class ValidateDqDimensionsComponent implements OnInit {
       data: new FormControl('Sita'),
       dqDefinition: new FormControl('tes'),
     });
-
        this._dqHubService.getDQDimensions(history.state.searchData).subscribe(
       (response) => { this.dataQualityDefinitions = response; console.log(response); },
       (error) => { console.log(error); });
-
   }
 
   validateData(): void {
 
-    this.progressBar =true;
+    this.progressBar = true;
   
     const dataQualityDefinition = new ValidateDQDefinition();
     dataQualityDefinition.data =  this.validateFormGroup.get('data')?.value;
     dataQualityDefinition.id =  this.validateFormGroup.get('dqDefinition')?.value;
 
     this._dqHubService.validateDQDimension(dataQualityDefinition).subscribe(
-      (response) => { console.log(response); this.progressBar=false; },
+      (response) => { 
+        this.validateResponse = response;
+         console.log(response); 
+         this.progressBar=false; },
       (error) => { console.log(error); });  
   }
 }
